@@ -51,7 +51,7 @@ document.querySelector('#product-content .quantity button:last-child').addEventL
 
 document.querySelector('#product-content .add-cart').addEventListener('click', () => {
     Cart.updateCart();
-    document.getElementById('cart').classList.toggle('active');
+    document.getElementById('cart').classList.add('active');
 });
 
 document.querySelector('.cart-content .filled button.delete').addEventListener('click', () => {

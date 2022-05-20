@@ -29,6 +29,7 @@ const Cart = {
             Cart.cartDOM.cart_icon.style.fill = '#69707D';
             Cart.cartDOM.cart_item_count.style.display = 'none';
         }
+        document.querySelector('#product-content .quantity span').innerText = Cart.qt_products;
     },
 
     more() {
