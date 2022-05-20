@@ -1,0 +1,379 @@
+@media (min-width: 950px) {
+    /* Geral ---------------------------- */
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    /* Header ------------------------------- */
+    header {
+        padding: 0 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        position: relative;
+    }
+
+    header #menu-humburguer {
+        display: none;
+    }
+
+    header #logo {
+        margin: 0;
+    }
+
+    header #menu {
+        position: initial;
+        background: none;
+        transition: none;
+        overflow: initial;
+        max-width: initial;
+        width: auto;
+        margin: 0 auto 0 5%;
+    }
+
+    header #menu ul {
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    header #menu ul li {
+        display: inline;
+        padding: 0;
+        margin-right: 8%;
+        position: relative;
+    }
+
+    header #menu ul li:last-child {
+        margin: 0;
+    }
+    
+    header #menu ul li a {
+        color: var(--dark-grayish-blue);
+        font-weight: 400;
+        padding: 55px 0;
+        display: inline-block;
+        border-collapse: collapse;
+        border-bottom: 3px solid rgba(0, 0, 0, 0);
+    }
+
+    header #menu ul li a:hover {
+        color: #000;
+        border-bottom: 3px solid var(--orange);
+    }
+
+    header #avatar {
+        height: 55px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    header #avatar:hover {
+        outline: 2px solid var(--orange);
+    }
+
+    header #cart-icon {
+        margin-right: 4%;
+        cursor: pointer;
+    }
+
+    header #cart-icon:hover svg path {
+        fill: #000;
+    }
+
+    /* Cart ----------------------------------- */
+    #cart {
+        top: 120px;
+        width: 380px;
+        left: initial;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+    }
+
+    #cart .cart-content .filled div div {
+        margin: 0 0 0 16px;
+        width: 100%;
+    }
+
+    #cart .cart-content .filled div div p:first-child {
+        white-space: initial;
+        overflow: initial;
+        text-overflow: initial;
+        width: 100%;
+    }
+
+    #cart .cart-content .filled div div p:first-child::after {
+        content: 'Fall Limited Edition Sneakers';
+    }
+
+    #cart button.checkout,
+    #cart .cart-content .filled button.delete {
+        cursor: pointer;
+    }
+
+    
+
+    /* Products ---------------------------------- */
+    #products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 7% 4%;
+    }
+
+    #product-image {
+        height: auto;
+        width: 436px;
+        cursor: pointer;
+        border-radius: 16px;
+    }
+
+    #product-image.active, #product-thumbnails {
+        z-index: 9;
+    }
+
+    #product-image .arrow-buttons {
+        display: none;
+    }
+
+    #product-thumbnails {
+        width: 436px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    #product-thumbnails .thumb {
+        display: flex;
+        align-items: center;
+        border-radius: 14px;
+        overflow: hidden;
+        position: relative;
+        width: 90px;
+        height: 90px;
+        cursor: pointer;
+    }
+
+    #product-thumbnails .thumb.active {
+        border: 2px solid var(--orange);
+    }
+    
+    #product-thumbnails .thumb img {
+        height: 100%;
+        width: 100%;
+    }
+
+    #product-thumbnails .thumb .overlay-thumb {
+        position: absolute;
+    }
+
+    #product-thumbnails .thumb.active .overlay-thumb,
+    #product-thumbnails .thumb:hover .overlay-thumb {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #product-thumbnails .thumb.active .overlay-thumb {
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    #product-thumbnails .thumb:hover .overlay-thumb {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    #product-content {
+        grid-row: 1 / 3;
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #product-content .brand {
+       font-size: 0.85em; 
+       margin-bottom: 20px;
+    }
+
+    #product-content .name {
+        font-size: 2.9em;
+        margin-bottom: 32px;
+    }
+
+    #product-content .description {
+        font-size: 1em;
+        line-height: 28px;
+    }
+
+    #product-content .prices .old-price {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #product-content .submit {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-top: 30px;
+    }
+
+    #product-content .quantity {
+        grid-column: 1 / 3;
+        margin: 0 24px;
+    }
+
+    #product-content .quantity button {
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    #product-content .quantity button:hover svg use {
+        fill: rgba(255, 125, 26, 0.7);
+    }
+
+    #product-content .add-cart {
+        grid-column: 3 / 6;
+        cursor: pointer;
+    }
+
+    #product-content .add-cart:hover {
+        background: rgba(255, 125, 26, 0.7);
+    }
+
+    /* Footer ------------------------------- */
+    footer {
+        margin-top: auto;
+    }
+
+    footer .attribution {
+        margin: 30px 40px 80px;
+    }
+
+    /* Modal ----------------------------- */
+    .modal-overlay {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    .modal-overlay.active {
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal {
+        width: 30%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .modal .close-icon {
+        margin: 0 0 20px auto;
+        cursor: pointer;
+    }
+
+    .modal .close-icon svg {
+        width: 20px;
+        height: 21px;
+    }
+
+    .modal .close-icon:hover svg path {
+        fill: var(--orange);
+    }
+
+    .modal .modal-images {
+        position: relative;
+        margin-bottom: 32px;
+        
+    }
+
+    .modal .modal-images .arrow-buttons {
+        margin: 0 -27px;
+    }
+
+    .modal .modal-images .arrow-buttons .next,
+    .modal .modal-images .arrow-buttons .previous {
+        width: 55px;
+        height: 55px;
+        cursor: pointer;
+    }
+
+    .modal .modal-images .arrow-buttons .next:hover svg path,
+    .modal .modal-images .arrow-buttons .previous:hover svg path {
+        stroke: var(--orange);
+    }
+
+    .modal .modal-images .arrow-buttons .previous svg {
+        width: 12px;
+        height: 18px;
+    }
+
+    .modal .modal-images .arrow-buttons .next svg {
+        width: 13px;
+        height: 18px;
+    }
+
+    .modal .modal-images .images {
+        white-space: nowrap;
+        overflow: hidden;
+        border-radius: 14px;
+    }
+
+    .modal .modal-images .images div {
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+
+    .modal .modal-images .images img {
+        width: 100%;
+    }
+
+    .modal .modal-thumbs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 6%;
+        margin: 0 8%;
+    }
+
+    .modal .modal-thumbs .thumb {
+        display: flex;
+        align-items: center;
+        border-radius: 16%;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .modal .modal-thumbs .thumb img {
+        width: 100%;
+    }
+
+    .modal .modal-thumbs .thumb.active {
+        border: 2px solid var(--orange);
+    }
+
+    .modal .modal-thumbs .thumb .overlay-thumb {
+        position: absolute;
+    }
+
+    .modal .modal-thumbs .thumb.active .overlay-thumb,
+    .modal .modal-thumbs .thumb:hover .overlay-thumb {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .modal .modal-thumbs .thumb.active .overlay-thumb {
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    .modal .modal-thumbs .thumb:hover .overlay-thumb {
+        background: rgba(255, 255, 255, 0.4);
+    }
+}
